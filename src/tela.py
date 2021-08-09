@@ -37,6 +37,20 @@ def randUnvisitedNeighbor(vertex):
 
     return chosenVertex
 
+def moveCell(vertex, nextVertex):
+    (x, y) = vertex
+    (x2, y2) = nextVertex
+
+    if x == x2:
+        if y < y2:
+            right()
+        else:
+            left()
+    else:
+        if x < x2:
+            down()
+        else:
+            up()
 
 #Instead of iterating through the neigbors it chooses one randomly
 def randomDFS(vertex):
