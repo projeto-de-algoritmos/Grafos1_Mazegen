@@ -2,6 +2,7 @@ import pygame
 
 import networkx as nx
 
+import random
 
 try:
     pygame.init()
@@ -19,6 +20,22 @@ pygame.display.set_caption ("Mazegen")
 #Random DFS
 
 G = nx.grid_2d_graph(20,20)
+
+
+def randUnvisitedNeighbor(vertex):
+    unvNeigh = []
+    neigh = G[vertex]
+    for (x, y) in neigh:
+        if G.nodes[(x, y)] != {'visited': 1} :
+            unvNeigh.append((x, y))
+
+    if len(unvNeigh) >= 1:
+        chosenVertex = random.choice(unvNeigh)
+
+    else:
+        chosenVertex = False
+
+    return chosenVertex
 
 
 #Instead of iterating through the neigbors it chooses one randomly
