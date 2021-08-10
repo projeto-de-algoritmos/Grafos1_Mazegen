@@ -31,21 +31,21 @@ def build_grid(x, y, w):
     x = 0
     y = 0 
     for i in range(1,21):
-        x = 20                                                            # set x coordinate to start position
-        y = y + 20                                                        # start a new row
+        x = 20                                                            
+        y = y + 20                                                        
         for j in range(1, 21):
-            pygame.draw.line(tela, WHITE, [x, y], [x + w, y])           # top of cell
-            pygame.draw.line(tela, WHITE, [x + w, y], [x + w, y + w])   # right of cell
-            pygame.draw.line(tela, WHITE, [x + w, y + w], [x, y + w])   # bottom of cell
-            pygame.draw.line(tela, WHITE, [x, y + w], [x, y])           # left of cell
-            x = x + 20                                                    # move cell to new position
+            pygame.draw.line(tela, WHITE, [x, y], [x + w, y])           
+            pygame.draw.line(tela, WHITE, [x + w, y], [x + w, y + w])   
+            pygame.draw.line(tela, WHITE, [x + w, y + w], [x, y + w])   
+            pygame.draw.line(tela, WHITE, [x, y + w], [x, y])           
+            x = x + 20                                                    
 
 
 def up(y, x):
     x=20*(x+1)
     y=20*(y+1)
-    pygame.draw.rect(tela, GREEN, (x + 1, y - 20 + 1, 19, 39), 0)         # draw a rectangle twice the width of the cell
-    pygame.display.update()                                              # to animate the wall being removed
+    pygame.draw.rect(tela, GREEN, (x + 1, y - 20 + 1, 19, 39), 0)        
+    pygame.display.update()                                              
     #time.sleep(2)
 
 def down(y, x):   

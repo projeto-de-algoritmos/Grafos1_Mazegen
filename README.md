@@ -1,18 +1,9 @@
 [//]: <> (**!! Atenção: Renomeie o seu repositório para \(Tema\)_\(NomeDoProjeto\). !!**) 
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
  
 [//]: <> (**!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**)
 
-# NomedoProjeto
-
-**Número da Lista**: X
+# Mazegen
 
 **Conteúdo da Disciplina**: Grafos
 
@@ -23,25 +14,33 @@ Temas:
 | 16/0152615  |  João Pedro Elias Moura |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O Mazegen gera um labirinto 20x20 utilizando um algoritimo DFS modificado que ao invez de iterar todos os vizinhos em ordem, seleciona um aleatoriamente. Grade de grafos gerada utilizando networkx. Futuro objetivo: Adicionar opção de input de dimensão do labirinto.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+[maze1](images/maze1.png "maze1")
+[maze2](images/maze1.png "maze2")
+[maze3](images/maze1.png "maze3")
 
 ## Instalação 
+-- Ter python3 na maquina
+-- Ter o modulo venv("python3 -m venv my_env
+")
+-- Clonar o repositorio
+-- Ativar o ambiente através de "source my_env/bin/activate"
+-- Executar "tela.py" com o comando "python tela.py"
 
 **Linguagem**: 
+Python
 
 **Framework**: 
-
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-
-## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Pygame
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
 
+
+Referencias:
+https://github.com/tonypdavis/PythonMazeGenerator/blob/master/pygame%20maze%20generator%20with%20solution.py
+https://www.baeldung.com/cs/maze-generation
 
 
 
