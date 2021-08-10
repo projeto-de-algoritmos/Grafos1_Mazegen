@@ -17,13 +17,13 @@
 O Mazegen gera um labirinto 20x20 utilizando um algoritimo DFS modificado que ao invez de iterar todos os vizinhos em ordem, seleciona um aleatoriamente. Grade de grafos gerada utilizando networkx. Futuro objetivo: Adicionar opção de input de dimensão do labirinto.
 
 ## Screenshots
-[maze1](images/maze1.png "maze1")
-[maze2](images/maze1.png "maze2")
-[maze3](images/maze1.png "maze3")
+![maze1](images/maze1.png "maze1")
+![maze2](images/maze2.png "maze2")
+![maze3](images/maze3.png "maze3")
 
 ## Instalação 
 -- Ter python3 na maquina
--- Ter o modulo venv("python3 -m venv my_env
+-- Ter o modulo venv("sudo apt install -y python3-venv
 ")
 -- Clonar o repositorio
 -- Ativar o ambiente através de "source my_env/bin/activate"
