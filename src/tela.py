@@ -31,7 +31,7 @@ def build_grid(x, y, w):
     x = 0
     y = 0 
     for i in range(1,21):
-        x = 0                                                            # set x coordinate to start position
+        x = 20                                                            # set x coordinate to start position
         y = y + 20                                                        # start a new row
         for j in range(1, 21):
             pygame.draw.line(tela, WHITE, [x, y], [x + w, y])           # top of cell
@@ -41,37 +41,40 @@ def build_grid(x, y, w):
             x = x + 20                                                    # move cell to new position
 
 
-def up(x, y):
-    x=20*x
-    y=20*y
-    pygame.draw.rect(tela, GREEN, (x + 1, y - w + 1, 19, 39), 0)         # draw a rectangle twice the width of the cell
+def up(y, x):
+    x=20*(x+1)
+    y=20*(y+1)
+    pygame.draw.rect(tela, GREEN, (x + 1, y - 20 + 1, 19, 39), 0)         # draw a rectangle twice the width of the cell
     pygame.display.update()                                              # to animate the wall being removed
+    #time.sleep(2)
 
-
-def down(x, y):   
-    x=20*x
-    y=20*y
+def down(y, x):   
+    x=20*(x+1)
+    y=20*(y+1)
     pygame.draw.rect(tela, GREEN, (x +  1, y + 1, 19, 39), 0)
     pygame.display.update()
+    #time.sleep(2)
 
 
-def left(x, y):
-    x=20*x
-    y=20*y
+def left(y, x):
+    x=20*(x+1)
+    y=20*(y+1)
     pygame.draw.rect(tela, GREEN, (x - 20 +1, y +1, 39, 19), 0)
     pygame.display.update()
+    #time.sleep(2)
 
 
-def right(x, y):
-    x=20*x
-    y=20*y
+def right(y, x):
+    x=20*(x+1)
+    y=20*(y+1)
     pygame.draw.rect(tela, GREEN, (x +1, y +1, 39, 19), 0)
     pygame.display.update()
+    #time.sleep(2)
 
 
 #Random DFS
 
-G = nx.grid_2d_graph(19,19)
+G = nx.grid_2d_graph(20,20)
 
 
 def randUnvisitedNeighbor(vertex):
@@ -96,17 +99,17 @@ def moveCell(vertex, nextVertex):
     if x == x2:
         if y < y2:
             time.sleep(.05)
-            right(x2, y2)
+            right(x, y)
         else:
             time.sleep(.05)
-            left(x2, y2)
+            left(x, y)
     else:
         if x < x2:
             time.sleep(.05)
-            down(x2, y2)
+            down(x, y)
         else:
             time.sleep(.05)
-            up(x2, y2)
+            up(x, y)
 
 #Instead of iterating through the neigbors it chooses one randomly
 def randomDFS(vertex):
@@ -117,15 +120,15 @@ def randomDFS(vertex):
         moveCell(vertex, nextVertex)
         randomDFS(nextVertex)
         nextVertex = randUnvisitedNeighbor(vertex)
-
-
-
+    
+    
 def createMaze():
     startVertex = (0, 0)
     randomDFS(startVertex)
 
 build_grid(40, 0, 20) 
 createMaze()
+
 
 sair = True
 
